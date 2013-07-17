@@ -1,0 +1,9 @@
+date:  2013-07-17
+version: 1.0
+author: dalcacer
+description: none
+contact: dalcacer@fhos.de
+url: https://raw.github.com/dalcacer/buildingblock-implementations/master/de.hsos.helloworld.bbl
+checksum: 2fd4e1c6 7a2d28fc ed849ee1 bb76e739 1b93eb12
+inputs: [String]
+outputs: [String]
