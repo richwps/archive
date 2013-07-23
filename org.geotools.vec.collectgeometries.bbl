@@ -1,0 +1,3 @@
+def proc = new Process("vec:CollectGeometries")
+Map results = proc.execute(["features": parameters[0]])
+outputs = ["wkt":results.result.getWkt()]
