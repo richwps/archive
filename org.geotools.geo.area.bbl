@@ -1,6 +1,6 @@
-Geometry one = new Geometry(parameters[0])
+one = new Geometry(parameters[0])
 
 def proc = new Process("geo:area")
-Map results = proc.execute(["geom": one])
+results = proc.execute(["geom": one])
 
 outputs = ["result": results.result]
