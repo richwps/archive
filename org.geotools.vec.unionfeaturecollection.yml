@@ -3,7 +3,7 @@ version: 1.0
 description: none
 author: dalcacer
 contact: dalcacer@fhos.de
-url: https://raw.github.com/dalcacer/buildingblock-implementations/master/org.geotools.vec.unionfeaturecollection.bbl
+url: https://raw.github.com/dalcacer/components-implementations/master/org.geotools.vec.unionfeaturecollection.bbl
 checksum: 2fd4e1c6 7a2d28fc ed849ee1 bb76e739 1b93eb12
 inputs: [Features,Features]
 outputs: [Features]
