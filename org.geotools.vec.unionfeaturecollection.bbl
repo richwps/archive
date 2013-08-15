@@ -5,7 +5,7 @@ two = parameters[1]
 def proc = new Process("vec:UnionFeatureCollection")
 results = proc.execute(["first": one, "second": two])
 
-Layer layer = new Layer()
+layer = new Layer()
 layer.add(results.result)
 
 outputfeatures = GeoscriptHelper.prepare(layer)
