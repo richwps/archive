@@ -65,7 +65,7 @@ Die vorläufge Syntax eines Executeaufrufs hat die folgende Form:
 
 ### Variablen, Datentypen und Konstanten
 
-Im Projektverlauf wird die direkte Zuweisung von Werten zu Variablen interessant.
+`TODO`
 
 
 ### Kontrollstrukturen
