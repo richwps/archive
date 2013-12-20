@@ -1,4 +1,4 @@
-package de.hsos.richwps.wd.execptions;
+package de.hsos.richwps.wd.exceptions;
 
 /**
  *

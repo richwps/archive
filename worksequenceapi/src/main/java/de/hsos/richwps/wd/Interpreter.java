@@ -16,7 +16,7 @@ import de.hsos.richwps.wd.elements.VarReference;
 import de.hsos.richwps.wd.elements.Worksequence;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import de.hsos.richwps.wd.execptions.UnsupportedSyntaxException;
+import de.hsos.richwps.wd.exceptions.UnsupportedSyntaxException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
