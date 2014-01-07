@@ -60,6 +60,10 @@ This procedure is based on [stackoverflow question](http://stackoverflow.com/que
 * install `de.hsos.richwps.wd.jar` to m2-repository with
 `mvn install:install-file -Dfile=./de.hsos.richwps.wd.jar -DgroupId=de.hsos.richwps -DartifactId=wd.lang -Dversion=1.0-SNAPSHOT -Dpackaging=jar` or `./installM2.sh`
 
+#### Docs
+
+* `mvn cobertura:cobertura site:site` 
+
 ## intended roadmap
 
 ### v1
