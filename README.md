@@ -4,13 +4,13 @@
 
 # richwps-wd
 
-XText-based toolchain for processing the RichWPS Worksequence Description (WD) Language.
+XText-based toolchain for processing the RichWPS Work Sequence Description (WSD) Language.
 This library is part of the BMBF research project RichWPS.
 
-This library works as tool for reading and generating WDs. It is not intended to be a runtime environment that executes a WD.
+This library works as tool for reading and generating WSDs. It is not intended to be a runtime environment that executes a given Work Sequence.
 
-* see [language](Language.md)
-* see roadmap (below)
+* see [language](Language.md) for 
+* see roadmap (below) 
 
 ## usage
 
@@ -25,8 +25,8 @@ This library works as tool for reading and generating WDs. It is not intended to
     <version>1.0-SNAPSHOT</version>
     </dependency>`
 
-* reading wd-scripts
-	* Instantiate `de.hsos.richwps.wd.Interpreter`
+* reading wsd-scripts
+	* Instantiate `de.hsos.richwps.wd.Reader`
 	* `load` a wd-script.
 	* `inspect` the script.
 	* `get` WorksequenceDescription
@@ -35,7 +35,7 @@ This library works as tool for reading and generating WDs. It is not intended to
 
 ## development
 
-### Language Definition
+### Language
 
 * Obtain [XText Standalone](http://www.eclipse.org/Xtext/download.html)
 
@@ -54,7 +54,8 @@ This procedure is based on [stackoverflow question](http://stackoverflow.com/que
 	* Select `Copy required libraries into a sub-folder next to the generated JAR.`
 * `Finish`
 
-### Workesequence API
+### Work Sequence 
+
 
 * Obtain IDE with maven-capability.
 * install `de.hsos.richwps.wd.jar` to m2-repository with
@@ -62,21 +63,21 @@ This procedure is based on [stackoverflow question](http://stackoverflow.com/que
 
 #### Docs
 
-* `mvn cobertura:cobertura site:site` 
+* `mvn cobertura:cobertura site:site`
 
 ## intended roadmap
 
 ### v1
 
- **Interpreter**
+ **Reader**
 
  * support for basic language elements
  	* rudimentary variable (assingment) support
  	* local and remote bindings
  	* execute statements
- * interpreter for sequential worksequence
+ * reader for sequential work sequencees
 
- **Generator**
+ **Write**
 
  * rudimentary variable (assingment) support
  	* local and remote bindings
@@ -86,7 +87,7 @@ This procedure is based on [stackoverflow question](http://stackoverflow.com/que
 
  * more sophisticated variable support (assingments of native datatypes).
  * control structures.
- * support for datasources as variables. 
+ * support for datasources as variables.
 
 ### v3
 

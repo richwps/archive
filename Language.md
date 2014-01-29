@@ -2,9 +2,9 @@
 
 ***Version:*** 1-SNAPSHOT
 
-# Worksequence Description
+# Work Sequence Description
 
-Die Worksequence Description dient der Beschreibung von Arbeitsabläufen auf Basis der Input und Outputparametern eines Web Processing Services.
+Die Work Sequence Description dient der Beschreibung von Arbeitsabläufen auf Basis der Input und Outputparametern eines Web Processing Services.
 
 
 ## Sprachelemente
