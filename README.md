@@ -1,7 +1,3 @@
-***Version:*** Draft
-
-***Build:***  [![Build Status](https://travis-ci.org/dalcacer/richwps-wd.png)](https://travis-ci.org/dalcacer/richwps-wd)
-
 # richwps-wd
 
 XText-based toolchain for processing the RichWPS Work Sequence Description (WSD) Language.
