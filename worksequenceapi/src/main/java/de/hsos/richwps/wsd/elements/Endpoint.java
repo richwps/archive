@@ -1,4 +1,4 @@
-package de.hsos.richwps.wd.elements;
+package de.hsos.richwps.wsd.elements;
 
 /**
  *

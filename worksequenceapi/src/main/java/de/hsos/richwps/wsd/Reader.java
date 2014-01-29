@@ -1,22 +1,22 @@
-package de.hsos.richwps.wd;
+package de.hsos.richwps.wsd;
 
 import com.google.inject.Injector;
 import de.hsos.richwps.WDStandaloneSetup;
 import de.hsos.richwps.wD.ExecInput;
 import de.hsos.richwps.wD.ExecOutput;
-import de.hsos.richwps.wd.elements.Assignment;
-import de.hsos.richwps.wd.elements.Binding;
-import de.hsos.richwps.wd.elements.Endpoint;
-import de.hsos.richwps.wd.elements.Execute;
-import de.hsos.richwps.wd.elements.IOperation;
-import de.hsos.richwps.wd.elements.InReference;
-import de.hsos.richwps.wd.elements.OutReference;
-import de.hsos.richwps.wd.elements.Reference;
-import de.hsos.richwps.wd.elements.VarReference;
-import de.hsos.richwps.wd.elements.Worksequence;
+import de.hsos.richwps.wsd.elements.Assignment;
+import de.hsos.richwps.wsd.elements.Binding;
+import de.hsos.richwps.wsd.elements.Endpoint;
+import de.hsos.richwps.wsd.elements.Execute;
+import de.hsos.richwps.wsd.elements.IOperation;
+import de.hsos.richwps.wsd.elements.InReference;
+import de.hsos.richwps.wsd.elements.OutReference;
+import de.hsos.richwps.wsd.elements.Reference;
+import de.hsos.richwps.wsd.elements.VarReference;
+import de.hsos.richwps.wsd.elements.Worksequence;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import de.hsos.richwps.wd.exceptions.UnsupportedSyntaxException;
+import de.hsos.richwps.wsd.exceptions.UnsupportedSyntaxException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * @author dalcacer
  * @version draft
  */
-public class Interpreter {
+public class Reader {
 
     /**
      * XText model of an actual worksequence.
@@ -56,7 +56,7 @@ public class Interpreter {
     /**
      * Constructs a new interpreter-object.
      */
-    public Interpreter() {
+    public Reader() {
         this.xtext_ws = null;
         this.worksequence = new Worksequence();
         this.injector = new WDStandaloneSetup().createInjectorAndDoEMFRegistration();
@@ -190,29 +190,29 @@ public class Interpreter {
         Assignment oas = null;
         String lefthand_str = as.getLefthand();
         //FIXME Thought XText would produce objects instead of strings :( 
-
-        de.hsos.richwps.wd.elements.Reference lefthand = null;
-        if (lefthand_str.startsWith("in.")) {
+        System.out.println("Inspecting: "+lefthand_str);
+        de.hsos.richwps.wsd.elements.Reference lefthand = null;
+        if (lefthand_str.contains("in.")) {
             String identifier = lefthand_str.substring(2);
             lefthand = new InReference(identifier);
-        } else if (lefthand_str.startsWith("out.")) {
-            String identifier = lefthand_str.substring(2);
+        } else if (lefthand_str.contains("out.")) {
+            String identifier = lefthand_str.substring(3);
             lefthand = new OutReference(identifier);
-        } else if (lefthand_str.startsWith("var.")) {
-            String identifier = lefthand_str.substring(2);
+        } else if (lefthand_str.contains("var.")) {
+            String identifier = lefthand_str.substring(3);
             lefthand = new VarReference(identifier);
         }
         Reference righthand = null;
         String righthand_str = as.getRighthand();
         if (righthand_str != null) {
-            if (righthand_str.startsWith("in.")) {
+            if (righthand_str.contains("in.")) {
                 String identifier = righthand_str.substring(2);
                 righthand = new InReference(identifier);
-            } else if (lefthand_str.startsWith("out.")) {
-                String identifier = righthand_str.substring(2);
+            } else if (lefthand_str.contains("out.")) {
+                String identifier = righthand_str.substring(3);
                 righthand = new OutReference(identifier);
-            } else if (righthand_str.startsWith("var.")) {
-                String identifier = righthand_str.substring(2);
+            } else if (righthand_str.contains("var.")) {
+                String identifier = righthand_str.substring(3);
                 righthand = new VarReference(identifier);
             }
         }
@@ -245,10 +245,10 @@ public class Interpreter {
             String wpsid = input.getWpsid();
             String reference_str = input.getReference();
             Reference ref = null;
-            if (reference_str.startsWith("in.")) {
+            if (reference_str.contains("in.")) {
                 String identifier = reference_str.substring(2);
                 ref = new InReference(identifier);
-            } else if (reference_str.startsWith("var.")) {
+            } else if (reference_str.contains("var.")) {
                 String identifier = reference_str.substring(2);
                 ref = new VarReference(identifier);
             }
@@ -259,10 +259,10 @@ public class Interpreter {
             String wpsid = output.getWpsid();
             String reference_str = output.getReference();
             Reference ref = null;
-            if (reference_str.startsWith("out.")) {
+            if (reference_str.contains("out.")) {
                 String identifier = reference_str.substring(2);
                 ref = new OutReference(identifier);
-            } else if (reference_str.startsWith("var.")) {
+            } else if (reference_str.contains("var.")) {
                 String identifier = reference_str.substring(2);
                 ref = new VarReference(identifier);
             }

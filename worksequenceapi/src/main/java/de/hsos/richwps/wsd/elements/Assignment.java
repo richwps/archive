@@ -1,6 +1,6 @@
-package de.hsos.richwps.wd.elements;
+package de.hsos.richwps.wsd.elements;
 
-import de.hsos.richwps.wd.exceptions.UnsupportedSyntaxException;
+import de.hsos.richwps.wsd.exceptions.UnsupportedSyntaxException;
 
 /**
  * Represents an assingment which is used to store the value of reference b to
@@ -23,9 +23,10 @@ public class Assignment implements IOperation {
     private Integer intvalue;
 
     public Assignment(Reference a, Reference b) throws Exception {
-        if (a instanceof InReference) {
+        if ((a instanceof InReference) || (a.getClass() == InReference.class)) {
             throw new UnsupportedSyntaxException("Binding values to worksequence inputs is not allowed.");
         }
+        
         this.lefthand = a;
         this.righthand = b;
         this.stringvalue = null;
@@ -91,8 +92,4 @@ public class Assignment implements IOperation {
         }
         return true;
     }
-
-    
-   
-    
 }

@@ -1,6 +1,6 @@
-package de.hsos.richwps.wd.elements;
+package de.hsos.richwps.wsd.elements;
 
-import de.hsos.richwps.wd.exceptions.UnsupportedSyntaxException;
+import de.hsos.richwps.wsd.exceptions.UnsupportedSyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,5 +61,47 @@ public class Execute implements IOperation {
         outputnames.add(wpsfrom);
         outputreferences.add(to);
     }
+
+    public String getHandle() {
+        return handle;
+    }
+
+    public void setHandle(String handle) {
+        this.handle = handle;
+    }
+
+    public List<String> getInputnames() {
+        return inputnames;
+    }
+
+    public void setInputnames(List<String> inputnames) {
+        this.inputnames = inputnames;
+    }
+
+    public List<String> getOutputnames() {
+        return outputnames;
+    }
+
+    public void setOutputnames(List<String> outputnames) {
+        this.outputnames = outputnames;
+    }
+
+    public List<Reference> getInputreferences() {
+        return inputreferences;
+    }
+
+    public void setInputreferences(List<Reference> inputreferences) {
+        this.inputreferences = inputreferences;
+    }
+
+    public List<Reference> getOutputreferences() {
+        return outputreferences;
+    }
+
+    public void setOutputreferences(List<Reference> outputreferences) {
+        this.outputreferences = outputreferences;
+    }
+    
+    
 
 }
