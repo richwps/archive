@@ -1,5 +1,3 @@
-# richwps-wd
-
 XText-based toolchain for processing the RichWPS Work Sequence Description (WSD) Language.
 This library is part of the BMBF research project RichWPS.
 
@@ -10,6 +8,6 @@ This library works as tool for reading and generating WSDs. It is not intended t
 * see [USAGE](USAGE.md)
 * see [DEVELOPMENT](DEVELOPMENT.md)
 
-## License
+# License
 
 Not, yet.
