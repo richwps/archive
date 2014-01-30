@@ -1,14 +1,14 @@
 package de.hsos.richwps.wd;
 
-import de.hsos.richwps.wsd.Reader;
-import de.hsos.richwps.wsd.elements.Assignment;
-import de.hsos.richwps.wsd.elements.Binding;
-import de.hsos.richwps.wsd.elements.Endpoint;
-import de.hsos.richwps.wsd.elements.Execute;
-import de.hsos.richwps.wsd.elements.InReference;
-import de.hsos.richwps.wsd.elements.OutReference;
-import de.hsos.richwps.wsd.elements.VarReference;
-import de.hsos.richwps.wsd.elements.Worksequence;
+import de.hsos.richwps.dsl.Reader;
+import de.hsos.richwps.dsl.elements.Assignment;
+import de.hsos.richwps.dsl.elements.Binding;
+import de.hsos.richwps.dsl.elements.Endpoint;
+import de.hsos.richwps.dsl.elements.Execute;
+import de.hsos.richwps.dsl.elements.InReference;
+import de.hsos.richwps.dsl.elements.OutReference;
+import de.hsos.richwps.dsl.elements.VarReference;
+import de.hsos.richwps.dsl.elements.Worksequence;
 import junit.framework.TestCase;
 
 /**

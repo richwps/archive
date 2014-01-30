@@ -1,22 +1,22 @@
-package de.hsos.richwps.wsd;
+package de.hsos.richwps.dsl;
 
 import com.google.inject.Injector;
 import de.hsos.richwps.WDStandaloneSetup;
 import de.hsos.richwps.wD.ExecInput;
 import de.hsos.richwps.wD.ExecOutput;
-import de.hsos.richwps.wsd.elements.Assignment;
-import de.hsos.richwps.wsd.elements.Binding;
-import de.hsos.richwps.wsd.elements.Endpoint;
-import de.hsos.richwps.wsd.elements.Execute;
-import de.hsos.richwps.wsd.elements.IOperation;
-import de.hsos.richwps.wsd.elements.InReference;
-import de.hsos.richwps.wsd.elements.OutReference;
-import de.hsos.richwps.wsd.elements.Reference;
-import de.hsos.richwps.wsd.elements.VarReference;
-import de.hsos.richwps.wsd.elements.Worksequence;
+import de.hsos.richwps.dsl.elements.Assignment;
+import de.hsos.richwps.dsl.elements.Binding;
+import de.hsos.richwps.dsl.elements.Endpoint;
+import de.hsos.richwps.dsl.elements.Execute;
+import de.hsos.richwps.dsl.elements.IOperation;
+import de.hsos.richwps.dsl.elements.InReference;
+import de.hsos.richwps.dsl.elements.OutReference;
+import de.hsos.richwps.dsl.elements.Reference;
+import de.hsos.richwps.dsl.elements.VarReference;
+import de.hsos.richwps.dsl.elements.Worksequence;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import de.hsos.richwps.wsd.exceptions.UnsupportedSyntaxException;
+import de.hsos.richwps.dsl.exceptions.UnsupportedSyntaxException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -191,7 +191,7 @@ public class Reader {
         String lefthand_str = as.getLefthand();
         //FIXME Thought XText would produce objects instead of strings :( 
         System.out.println("Inspecting: "+lefthand_str);
-        de.hsos.richwps.wsd.elements.Reference lefthand = null;
+        de.hsos.richwps.dsl.elements.Reference lefthand = null;
         if (lefthand_str.contains("in.")) {
             String identifier = lefthand_str.substring(2);
             lefthand = new InReference(identifier);

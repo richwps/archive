@@ -1,4 +1,4 @@
-package de.hsos.richwps.wsd.elements;
+package de.hsos.richwps.dsl.elements;
 
 /**
  * Represents a reference (in/out/var) which can be used by assingments, and
@@ -6,9 +6,9 @@ package de.hsos.richwps.wsd.elements;
  *
  * @author dalcacer
  */
-public class OutReference extends Reference {
+public class InReference extends Reference {
 
-    public OutReference(String identifier) {
+    public InReference(String identifier) {
         super(identifier);
     }
 
@@ -17,17 +17,15 @@ public class OutReference extends Reference {
         if (obj == null) {
             return false;
         }
-
         if (getClass() != obj.getClass()) {
             return false;
         }
 
-        OutReference other = (OutReference) obj;
+        InReference other = (InReference) obj;
         if (this.getId().equals(other.getId())) {
             return true;
-        }
 
+        }
         return false;
     }
-
 }

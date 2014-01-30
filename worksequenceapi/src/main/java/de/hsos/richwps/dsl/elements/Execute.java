@@ -1,6 +1,6 @@
-package de.hsos.richwps.wsd.elements;
+package de.hsos.richwps.dsl.elements;
 
-import de.hsos.richwps.wsd.exceptions.UnsupportedSyntaxException;
+import de.hsos.richwps.dsl.exceptions.UnsupportedSyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 

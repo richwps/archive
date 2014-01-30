@@ -1,4 +1,6 @@
-package de.hsos.richwps.wsd;
+package de.hsos.richwps.dsl;
+
+import de.hsos.richwps.WDStandaloneSetup;
 
 /**
  * @author dalcacer

@@ -1,6 +1,6 @@
-package de.hsos.richwps.wsd.elements;
+package de.hsos.richwps.dsl.elements;
 
-import de.hsos.richwps.wsd.exceptions.UnsupportedSyntaxException;
+import de.hsos.richwps.dsl.exceptions.UnsupportedSyntaxException;
 
 /**
  * Represents an assingment which is used to store the value of reference b to

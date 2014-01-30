@@ -1,4 +1,4 @@
-package de.hsos.richwps.wsd.elements;
+package de.hsos.richwps.dsl.elements;
 
 /**
  * @author dalcacer

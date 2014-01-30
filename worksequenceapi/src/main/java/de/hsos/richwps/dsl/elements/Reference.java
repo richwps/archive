@@ -1,4 +1,4 @@
-package de.hsos.richwps.wsd.elements;
+package de.hsos.richwps.dsl.elements;
 
 /**
  * Represents a reference (in/out/var) which can be used by assingments, and

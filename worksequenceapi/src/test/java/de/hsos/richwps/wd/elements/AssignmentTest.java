@@ -5,10 +5,10 @@
  */
 package de.hsos.richwps.wd.elements;
 
-import de.hsos.richwps.wsd.elements.InReference;
-import de.hsos.richwps.wsd.elements.Reference;
-import de.hsos.richwps.wsd.elements.VarReference;
-import de.hsos.richwps.wsd.elements.Assignment;
+import de.hsos.richwps.dsl.elements.InReference;
+import de.hsos.richwps.dsl.elements.Reference;
+import de.hsos.richwps.dsl.elements.VarReference;
+import de.hsos.richwps.dsl.elements.Assignment;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import junit.framework.Test;

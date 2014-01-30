@@ -6,7 +6,7 @@
 
 package de.hsos.richwps.wd.elements;
 
-import de.hsos.richwps.wsd.elements.InReference;
+import de.hsos.richwps.dsl.elements.InReference;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
