@@ -1,4 +1,4 @@
-package de.hsos.richwps.dsl.elements;
+package de.hsos.richwps.dsl.api.elements;
 
 /**
  * Represents a local or remote binding.

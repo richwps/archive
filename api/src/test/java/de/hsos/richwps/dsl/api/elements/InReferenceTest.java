@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package de.hsos.richwps.wd.elements;
+package de.hsos.richwps.dsl.api.elements;
 
-import de.hsos.richwps.dsl.elements.InReference;
+import de.hsos.richwps.dsl.api.elements.InReference;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;

@@ -8,4 +8,4 @@
 *.war
 *.ear
 */target/**
-de.hsos.richwps.wd_lib
+de.hsos.richwps.dsl_lib

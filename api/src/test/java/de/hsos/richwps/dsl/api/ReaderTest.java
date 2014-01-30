@@ -1,14 +1,14 @@
-package de.hsos.richwps.wd;
+package de.hsos.richwps.dsl.api;
 
-import de.hsos.richwps.dsl.Reader;
-import de.hsos.richwps.dsl.elements.Assignment;
-import de.hsos.richwps.dsl.elements.Binding;
-import de.hsos.richwps.dsl.elements.Endpoint;
-import de.hsos.richwps.dsl.elements.Execute;
-import de.hsos.richwps.dsl.elements.InReference;
-import de.hsos.richwps.dsl.elements.OutReference;
-import de.hsos.richwps.dsl.elements.VarReference;
-import de.hsos.richwps.dsl.elements.Worksequence;
+import de.hsos.richwps.dsl.api.Reader;
+import de.hsos.richwps.dsl.api.elements.Assignment;
+import de.hsos.richwps.dsl.api.elements.Binding;
+import de.hsos.richwps.dsl.api.elements.Endpoint;
+import de.hsos.richwps.dsl.api.elements.Execute;
+import de.hsos.richwps.dsl.api.elements.InReference;
+import de.hsos.richwps.dsl.api.elements.OutReference;
+import de.hsos.richwps.dsl.api.elements.VarReference;
+import de.hsos.richwps.dsl.api.elements.Worksequence;
 import junit.framework.TestCase;
 
 /**
@@ -19,6 +19,8 @@ public class ReaderTest extends TestCase {
 
     String userdir = System.getProperty("user.dir");
     String filesep = System.getProperty("file.separator");
+    String testfileprefix = "src/main/resources/de/hsos/richwps/dsl/";
+    String ext = ".dsl";
 
     public ReaderTest(String testName) {
         super(testName);
@@ -41,7 +43,7 @@ public class ReaderTest extends TestCase {
         System.out.println("testLoadFromFileObject");
         System.out.println(System.getProperty("user.dir"));
 
-        String abspath = userdir + filesep + "src/main/resources/de/hsos/richwps/wd/testfiles/Mixed.wd";
+        String abspath = userdir + filesep + testfileprefix + "Mixed" + ext;
         java.io.File fh = new java.io.File(abspath);
         Reader instance = new Reader();
         try {
@@ -56,7 +58,7 @@ public class ReaderTest extends TestCase {
      * Test of load method, of class Interpreter.
      */
     public void testLoadMalformed() {
-        String path = "src/main/resources/de/hsos/richwps/wd/testfiles/Malformed.wd";
+        String path = userdir + filesep + testfileprefix + "Malformed" + ext;
 
         Reader instance = new Reader();
         try {
@@ -73,7 +75,7 @@ public class ReaderTest extends TestCase {
         System.out.println("testLoadFromAbsPath");
         System.out.println(System.getProperty("user.dir"));
 
-        String abspath = userdir + filesep + "src/main/resources/de/hsos/richwps/wd/testfiles/Mixed.wd";
+        String abspath = userdir + filesep + testfileprefix + "Mixed" + ext;
 
         Reader instance = new Reader();
         try {
@@ -90,7 +92,7 @@ public class ReaderTest extends TestCase {
      */
     public void testInspectMixed() {
         System.out.println("testInspectMixed");
-        String path = "src/main/resources/de/hsos/richwps/wd/testfiles/Mixed.wd";
+        String path = userdir + filesep + testfileprefix + "Mixed" + ext;
         Reader instance = new Reader();
         try {
             instance.load(path);
@@ -109,7 +111,7 @@ public class ReaderTest extends TestCase {
 
     public void testCountBindings() {
         System.out.println("testCountBindings");
-        String path = "src/main/resources/de/hsos/richwps/wd/testfiles/Mixed.wd";
+        String path = testfileprefix + "Mixed" + ext;
         Reader instance = new Reader();
         try {
             instance.load(path);
@@ -130,7 +132,7 @@ public class ReaderTest extends TestCase {
 
     public void testCountExecutes() {
         System.out.println("testCountExecutes");
-        String path = "src/main/resources/de/hsos/richwps/wd/testfiles/Mixed.wd";
+        String path = testfileprefix + "Mixed" + ext;
         Reader instance = new Reader();
         try {
             instance.load(path);
@@ -151,7 +153,7 @@ public class ReaderTest extends TestCase {
 
     public void testCountAssignments() {
         System.out.println("testCountAssignments");
-        String path = "src/main/resources/de/hsos/richwps/wd/testfiles/Mixed.wd";
+        String path = testfileprefix + "Mixed" + ext;
         Reader instance = new Reader();
         try {
             instance.load(path);
@@ -174,7 +176,7 @@ public class ReaderTest extends TestCase {
     //FIXME: No working, yet.
     public void testAssingments() {
         System.out.println("testAssingments");
-        String path = "src/main/resources/de/hsos/richwps/wd/testfiles/Assignments.wd";
+        String path = testfileprefix + "Assignments" + ext;
         Reader instance = new Reader();
         try {
             instance.load(path);
@@ -218,7 +220,7 @@ public class ReaderTest extends TestCase {
 
     public void testBindings() {
         System.out.println("testBindings");
-        String path = "src/main/resources/de/hsos/richwps/wd/testfiles/Bindings.wd";
+        String path = testfileprefix + "Bindings" + ext;
         Reader instance = new Reader();
         try {
             instance.load(path);
@@ -266,7 +268,7 @@ public class ReaderTest extends TestCase {
 
     public void testExecute() {
         System.out.println("testExecute");
-        String path = "src/main/resources/de/hsos/richwps/wd/testfiles/Executes.wd";
+        String path = testfileprefix + "Executes" + ext;
         Reader instance = new Reader();
         try {
             instance.load(path);

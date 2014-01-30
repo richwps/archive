@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.hsos.richwps.wd.elements;
+package de.hsos.richwps.dsl.api.elements;
 
-import de.hsos.richwps.dsl.elements.InReference;
-import de.hsos.richwps.dsl.elements.Reference;
-import de.hsos.richwps.dsl.elements.VarReference;
-import de.hsos.richwps.dsl.elements.Assignment;
+import de.hsos.richwps.dsl.api.elements.InReference;
+import de.hsos.richwps.dsl.api.elements.Reference;
+import de.hsos.richwps.dsl.api.elements.VarReference;
+import de.hsos.richwps.dsl.api.elements.Assignment;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import junit.framework.Test;

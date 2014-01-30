@@ -6,20 +6,19 @@
     <artifactId>dsl.api</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>DSL API</name>
+    <name>RichWPS DSL API</name>
        
     <issueManagement>
         <system>Github</system>
-        <url>https://github.com/dalcacer/richwps-wd/issues</url>
+        <url>https://github.com/richwps/dsl/issues</url>
     </issueManagement>
   
     <scm>
-        <connection>scm:git:https://github.com/dalcacer/richwps-wd</connection>
-        <developerConnection>scm:git:ssh://127.0.0.1/svn/my-project</developerConnection>
-        <url>https://github.com/dalcacer/richwps-wd</url>
+        <connection>scm:git:https://github.com/richwps/dsl/</connection>
+        <developerConnection>cm:git:https://github.com/richwps/dsl/</developerConnection>
+        <url>https://github.com/richwps/dsl/</url>
     </scm>
 
- 
  
     <url>http://maven.apache.org</url>
     <build>
@@ -86,7 +85,7 @@
         
         <dependency>
             <groupId>de.hsos.richwps</groupId>
-            <artifactId>wd.lang</artifactId>
+            <artifactId>dsl.lang</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         

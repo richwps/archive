@@ -1,4 +1,4 @@
-package de.hsos.richwps.dsl.elements;
+package de.hsos.richwps.dsl.api.elements;
 
 import java.util.ArrayList;
 

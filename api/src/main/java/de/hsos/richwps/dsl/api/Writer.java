@@ -1,6 +1,6 @@
-package de.hsos.richwps.dsl;
+package de.hsos.richwps.dsl.api;
 
-import de.hsos.richwps.WDStandaloneSetup;
+import de.hsos.richwps.DSLStandaloneSetup;
 
 /**
  * @author dalcacer

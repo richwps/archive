@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.hsos.richwps.wd.elements;
+package de.hsos.richwps.dsl.api.elements;
 
-import de.hsos.richwps.dsl.elements.VarReference;
+import de.hsos.richwps.dsl.api.elements.VarReference;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
