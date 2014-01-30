@@ -8,6 +8,7 @@ import de.hsos.richwps.dsl.api.exceptions.UnsupportedSyntaxException;
  *
  * @author fbensmann
  * @author dalcacer
+ * @version draft
  */
 public class Assignment implements IOperation {
 
@@ -91,5 +92,13 @@ public class Assignment implements IOperation {
             return false;
         }
         return true;
+    }
+    
+    /**
+     * 
+     */
+    @Override
+    public String toNotation(){
+        return "assignment";
     }
 }

@@ -5,6 +5,7 @@ package de.hsos.richwps.dsl.api.elements;
  * execute statements.
  *
  * @author dalcacer
+ * @version draft
  */
 public class InReference extends Reference {
 

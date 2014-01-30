@@ -1,6 +1,5 @@
 package de.hsos.richwps.dsl.api;
 
-import de.hsos.richwps.dsl.api.Reader;
 import de.hsos.richwps.dsl.api.elements.Assignment;
 import de.hsos.richwps.dsl.api.elements.Binding;
 import de.hsos.richwps.dsl.api.elements.Endpoint;
@@ -14,6 +13,7 @@ import junit.framework.TestCase;
 /**
  *
  * @author dalcacer
+ * @versoin draft
  */
 public class ReaderTest extends TestCase {
 

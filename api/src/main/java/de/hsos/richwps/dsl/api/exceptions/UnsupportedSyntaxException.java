@@ -3,6 +3,7 @@ package de.hsos.richwps.dsl.api.exceptions;
 /**
  *
  * @author dalcacer
+ * @version draft
  */
 public class UnsupportedSyntaxException extends Exception{
  

@@ -54,7 +54,7 @@ public class Reader {
     private int stat_assingments = 0;
 
     /**
-     * Constructs a new interpreter-object.
+     * Constructs a new reader-object.
      */
     public Reader() {
         this.xtext_ws = null;
@@ -66,7 +66,7 @@ public class Reader {
     }
 
     /**
-     * Loads a script file from an path string.
+     * Loads a script file from a path string.
      *
      * @param path path to wd-file.
      * @throws Exception When worksequence is not loadable.

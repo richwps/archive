@@ -4,9 +4,10 @@ package de.hsos.richwps.dsl.api.elements;
  *
  * @author fbensman
  * @author dalcacer
+ * @version draft
  */
 public class Endpoint {
-    
+
     /**
      * Protocoll type for endpoint
      */
@@ -23,8 +24,28 @@ public class Endpoint {
      * Path to endpoint
      */
     private String path = null;
-    
-    public Endpoint(){}
+
+    public static final int DEFAULTPORTHTTP = 80;
+    public static final int DEFAULTPORTHTTPS = 443;
+    public static final String DEFAULTPROTOHTTP = "http";
+    public static final String DEFAULTPROTOHTTPS = "https";
+
+    public Endpoint() {
+    }
+
+    public Endpoint(String host, String path) {
+        this.protocol = DEFAULTPROTOHTTP;
+        this.host = host;
+        this.port = DEFAULTPORTHTTP;
+        this.path = path;
+    }
+
+    public Endpoint(String protocol, String host, int port, String path) {
+        this.protocol = protocol;
+        this.host = host;
+        this.port = port;
+        this.path = path;
+    }
 
     public String getProtocol() {
         return protocol;
@@ -60,7 +81,7 @@ public class Endpoint {
 
     @Override
     public String toString() {
-        return "Endpoint{" + "protocoll=" + protocol + ", host=" + host + ", port=" + port + ", path=" + path + '}';
+        return "Endpoint{" + "protocol=" + protocol + ", host=" + host + ", port=" + port + ", path=" + path + '}';
     }
 
     @Override
@@ -92,9 +113,5 @@ public class Endpoint {
         }
         return true;
     }
-    
-    
-    
-   
-    
+
 }

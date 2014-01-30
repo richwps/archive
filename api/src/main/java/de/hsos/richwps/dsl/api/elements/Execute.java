@@ -19,6 +19,7 @@ import java.util.List;
  *
  * @author fbensmann
  * @author dalcacer
+ * @version draft
  */
 public class Execute implements IOperation {
 
@@ -101,7 +102,12 @@ public class Execute implements IOperation {
     public void setOutputreferences(List<Reference> outputreferences) {
         this.outputreferences = outputreferences;
     }
-    
-    
 
+    /**
+     *
+     */
+    @Override
+    public String toNotation() {
+        return "execute";
+    }
 }

@@ -5,6 +5,7 @@ package de.hsos.richwps.dsl.api.elements;
  *
  * @author fbensmann
  * @author dalcacer
+ * @versoin draft
  */
 public class Binding implements IOperation {
 
@@ -30,6 +31,12 @@ public class Binding implements IOperation {
         this.endpoint = null;
     }
 
+      public Binding(String handle, String processid, Endpoint endpoint) {
+        this.handle = handle;
+        this.processid = processid;
+        this.endpoint = endpoint;
+    }
+    
     public boolean isLocal() {
         if (this.endpoint == null) {
             return true;
@@ -87,4 +94,11 @@ public class Binding implements IOperation {
         return "Binding{" + "handle=" + handle + ", endpoint=" + endpoint + ", processid=" + processid + '}';
     }
 
+     /**
+     * 
+     */
+    @Override
+    public String toNotation(){
+        return this.toString();
+    }
 }

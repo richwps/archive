@@ -1,16 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package de.hsos.richwps.dsl.api.elements;
 
-import de.hsos.richwps.dsl.api.elements.InReference;
-import de.hsos.richwps.dsl.api.elements.Reference;
-import de.hsos.richwps.dsl.api.elements.VarReference;
-import de.hsos.richwps.dsl.api.elements.Assignment;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -18,6 +8,8 @@ import junit.framework.TestSuite;
 /**
  *
  * @author dalcacer
+ * @version draft
+ * 
  */
 public class AssignmentTest extends TestCase {
 
