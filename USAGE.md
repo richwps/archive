@@ -1,5 +1,3 @@
-# usage
-
 * install `de.hsos.richwps.wd.jar` to m2-repository with 
     `mvn install:install-file -Dfile=./de.hsos.richwps.wd.jar -DgroupId=de.hsos.richwps -DartifactId=d
     wd.lang -Dversion=1.0-SNAPSHOT -Dpackaging=jar` or `./installM2.sh`
@@ -13,7 +11,7 @@
     </dependency>`
 
 * reading scripts
-	* Instantiate `de.hsos.richwps.dsl.Reader`
+	* Instantiate `de.hsos.richwps.dsl.api.Reader`
 	* `load` a script.
 	* `inspect` the script.
 	* `get` WorksequenceDescription
