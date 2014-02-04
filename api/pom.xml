@@ -15,7 +15,7 @@
   
     <scm>
         <connection>scm:git:https://github.com/richwps/dsl/</connection>
-        <developerConnection>cm:git:https://github.com/richwps/dsl/</developerConnection>
+        <developerConnection>scm:git:https://github.com/richwps/dsl/</developerConnection>
         <url>https://github.com/richwps/dsl/</url>
     </scm>
 
