@@ -103,6 +103,30 @@ public class Execute implements IOperation {
         this.outputreferences = outputreferences;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 13 * hash + (this.handle != null ? this.handle.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Execute other = (Execute) obj;
+        if ((this.handle == null) ? (other.handle != null) : !this.handle.equals(other.handle)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
     /**
      *
      */
@@ -110,4 +134,6 @@ public class Execute implements IOperation {
     public String toNotation() {
         return "execute";
     }
+    
+    
 }

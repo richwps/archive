@@ -299,7 +299,7 @@ public class ReaderTest extends TestCase {
             Execute act_e1 = (Execute) ws.get(0);
             System.out.println(act_e1);
 
-            assertEquals(act_e1, act_e1);
+            assertEquals(act_e1, exp_e1);
 
         } catch (Exception e) {
             e.printStackTrace();
