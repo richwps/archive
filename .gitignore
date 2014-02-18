@@ -9,4 +9,4 @@
 *.ear
 */target/**
 de.hsos.richwps.dsl_lib
-/xtext/de.hsos.richwps.dsl/src-gen/*
+*/src-gen/**

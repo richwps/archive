@@ -88,6 +88,9 @@ public class DSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAssignmentAccess().getVal_sAssignment_2_2(), "rule__Assignment__Val_sAssignment_2_2");
 					put(grammarAccess.getAssignmentAccess().getLefthandAssignment_3_0(), "rule__Assignment__LefthandAssignment_3_0");
 					put(grammarAccess.getAssignmentAccess().getVal_iAssignment_3_2(), "rule__Assignment__Val_iAssignment_3_2");
+					put(grammarAccess.getIN_REFERENCEAccess().getRefnameAssignment_1(), "rule__IN_REFERENCE__RefnameAssignment_1");
+					put(grammarAccess.getOUT_REFERENCEAccess().getRefnameAssignment_1(), "rule__OUT_REFERENCE__RefnameAssignment_1");
+					put(grammarAccess.getVAR_REFERENCEAccess().getRefnameAssignment_1(), "rule__VAR_REFERENCE__RefnameAssignment_1");
 				}
 			};
 		}

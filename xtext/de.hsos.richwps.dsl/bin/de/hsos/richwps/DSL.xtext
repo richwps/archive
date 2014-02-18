@@ -42,13 +42,25 @@ Assignment:
 
 
 IN_REFERENCE:
-	('in.' ID);
+	(IN_REFERENCE_HANDLE refname=ID);
 
 OUT_REFERENCE:
-	('out.' ID);
+	(OUT_REFERENCE_HANDLE refname=ID);
 
 VAR_REFERENCE:
-	('var.' ID);
+	(VAR_REFERENCE_HANDLE refname=ID);
+
+terminal IN_REFERENCE_HANDLE:
+	'in.' | 'IN.'
+;
+
+terminal VAR_REFERENCE_HANDLE:
+	'var.' | 'VAR.'
+;
+
+terminal OUT_REFERENCE_HANDLE:
+	'out.' | 'OUT.'
+;
 
 QUALIFIEDNAME:
 	ID ('.' ID)*;

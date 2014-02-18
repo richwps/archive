@@ -29,19 +29,28 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSL.ecore#//ExecuteStatement/execoutputs"/>
     </genClasses>
     <genClasses ecoreClass="DSL.ecore#//ExecInput">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//ExecInput/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSL.ecore#//ExecInput/reference"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//ExecInput/wpsid"/>
     </genClasses>
     <genClasses ecoreClass="DSL.ecore#//ExecOutput">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//ExecOutput/wpsid"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//ExecOutput/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSL.ecore#//ExecOutput/reference"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//ExecOutput/wpside"/>
     </genClasses>
     <genClasses ecoreClass="DSL.ecore#//Assignment">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//Assignment/lefthand"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//Assignment/righthand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSL.ecore#//Assignment/lefthand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSL.ecore#//Assignment/righthand"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//Assignment/val_s"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//Assignment/val_i"/>
+    </genClasses>
+    <genClasses ecoreClass="DSL.ecore#//IN_REFERENCE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//IN_REFERENCE/refname"/>
+    </genClasses>
+    <genClasses ecoreClass="DSL.ecore#//OUT_REFERENCE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//OUT_REFERENCE/refname"/>
+    </genClasses>
+    <genClasses ecoreClass="DSL.ecore#//VAR_REFERENCE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//VAR_REFERENCE/refname"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
