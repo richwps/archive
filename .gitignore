@@ -10,3 +10,4 @@
 */target/**
 de.hsos.richwps.dsl_lib
 */src-gen/**
+xtext/de.hsos.richwps.dsl/src-gen
