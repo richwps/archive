@@ -173,7 +173,6 @@ public class ReaderTest extends TestCase {
         assertEquals(exp, res);
     }
 
-    //FIXME: No working, yet.
     public void testAssingments() {
         System.out.println("testAssingments");
         String path = testfileprefix + "Assignments" + ext;
@@ -199,19 +198,19 @@ public class ReaderTest extends TestCase {
         try {
             Assignment exp_as1 = new Assignment(new OutReference("test"), new InReference("test2"));
             Assignment act_as1 = (Assignment) ws.get(0);
-            //assertEquals(exp_as1, act_as1);
+            assertEquals(exp_as1, act_as1);
 
             Assignment exp_as2 = new Assignment(new VarReference("test"), new Integer(10));
             Assignment act_as2 = (Assignment) ws.get(1);
-            //assertEquals(exp_as2, act_as2);
+            assertEquals(exp_as2, act_as2);
 
             Assignment exp_as3 = new Assignment(new VarReference("test"), "hallo welt");
             Assignment act_as3 = (Assignment) ws.get(2);
-            //assertEquals(exp_as3, act_as3);
+            assertEquals(exp_as3, act_as3);
 
             Assignment exp_as4 = new Assignment(new OutReference("test"), new VarReference("foo"));
             Assignment act_as4 = (Assignment) ws.get(3);
-            //assertEquals(exp_as4, act_as4);
+            assertEquals(exp_as4, act_as4);
         } catch (Exception e) {
             e.printStackTrace();
             fail();

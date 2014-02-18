@@ -4,6 +4,9 @@ import com.google.inject.Injector;
 import de.hsos.richwps.DSLStandaloneSetup;
 import de.hsos.richwps.dSL.ExecInput;
 import de.hsos.richwps.dSL.ExecOutput;
+import de.hsos.richwps.dSL.IN_REFERENCE;
+import de.hsos.richwps.dSL.OUT_REFERENCE;
+import de.hsos.richwps.dSL.VAR_REFERENCE;
 import de.hsos.richwps.dsl.api.elements.Assignment;
 import de.hsos.richwps.dsl.api.elements.Binding;
 import de.hsos.richwps.dsl.api.elements.Endpoint;
@@ -113,12 +116,16 @@ public class Reader {
     }
 
     /**
-     * Inspects the loaded DSL file and creates a sequential
-     * higher-level representation.
+     * Inspects the loaded DSL file and creates a sequential higher-level
+     * representation.
      */
     public void inspect() throws Exception {
         TreeIterator<EObject> iterator = this.xtext_ws.eAllContents();
-
+        //identifiy top-level language elements
+        //1. local bindings
+        //2. remote bindings
+        //3. execute statement
+        //4. assingment
         while (iterator.hasNext()) {
             final EObject eo = iterator.next();
             IOperation elem = null;
@@ -180,43 +187,61 @@ public class Reader {
     }
 
     /**
-     * Converts an XText assingment to an assingment object.
-     * <code>FIXME Testpurpose only. Reinmplement.</code>
+     * Converts an XText assingment to an assingment object. An assignments
+     * consists of a lefthand and a righhand. Lefthand and righthandvalues can
+     * be reference (in/out/var) or values.      <code>Assignment:
+     * ( lefthand=OUT_REFERENCE '=' righthand=IN_REFERENCE) |
+     * ( lefthand=OUT_REFERENCE '=' righthand=VAR_REFERENCE) |
+     * ( lefthand=VAR_REFERENCE '=' val_s = STRING)	//literaldata
+     * | (lefthand=VAR_REFERENCE '=' val_i = INT);
+     * IN_REFERENCE:
+     * (reftype=IN_REFERENCE_HANDLE refname=ID);
+     *
+     * OUT_REFERENCE:
+     * (reftype=OUT_REFERENCE_HANDLE refname=ID);
+     *
+     * VAR_REFERENCE:
+     * (reftype=VAR_REFERENCE_HANDLE refname=ID);
+     * </code>
      *
      * @param as Xtext assingment
      * @return assingment.
      */
     private Assignment createAssignment(de.hsos.richwps.dSL.Assignment as) throws Exception {
         Assignment oas = null;
-        String lefthand_str = as.getLefthand();
-        //FIXME Thought XText would produce objects instead of strings :( 
-        System.out.println("Inspecting: "+lefthand_str);
+
+        EObject xtextlefthand = as.getLefthand();
         de.hsos.richwps.dsl.api.elements.Reference lefthand = null;
-        if (lefthand_str.contains("in.")) {
-            String identifier = lefthand_str.substring(2);
-            lefthand = new InReference(identifier);
-        } else if (lefthand_str.contains("out.")) {
-            String identifier = lefthand_str.substring(3);
-            lefthand = new OutReference(identifier);
-        } else if (lefthand_str.contains("var.")) {
-            String identifier = lefthand_str.substring(3);
-            lefthand = new VarReference(identifier);
+         
+        if(xtextlefthand instanceof de.hsos.richwps.dSL.IN_REFERENCE){
+            de.hsos.richwps.dSL.IN_REFERENCE in = (de.hsos.richwps.dSL.IN_REFERENCE) xtextlefthand;
+            lefthand = new InReference(in.getRefname());
         }
-        Reference righthand = null;
-        String righthand_str = as.getRighthand();
-        if (righthand_str != null) {
-            if (righthand_str.contains("in.")) {
-                String identifier = righthand_str.substring(2);
-                righthand = new InReference(identifier);
-            } else if (lefthand_str.contains("out.")) {
-                String identifier = righthand_str.substring(3);
-                righthand = new OutReference(identifier);
-            } else if (righthand_str.contains("var.")) {
-                String identifier = righthand_str.substring(3);
-                righthand = new VarReference(identifier);
-            }
+        else if (xtextlefthand instanceof de.hsos.richwps.dSL.OUT_REFERENCE){
+            de.hsos.richwps.dSL.OUT_REFERENCE out = (de.hsos.richwps.dSL.OUT_REFERENCE) xtextlefthand;
+            lefthand = new OutReference(out.getRefname());
+        }
+        else if (xtextlefthand instanceof de.hsos.richwps.dSL.VAR_REFERENCE){
+             de.hsos.richwps.dSL.VAR_REFERENCE var = (de.hsos.richwps.dSL.VAR_REFERENCE) xtextlefthand;
+            lefthand = new VarReference(var.getRefname());
         }
 
+        Reference righthand = null;
+        EObject xtextrighthand = as.getRighthand();
+        
+         if(xtextrighthand instanceof de.hsos.richwps.dSL.IN_REFERENCE){
+            de.hsos.richwps.dSL.IN_REFERENCE in = (de.hsos.richwps.dSL.IN_REFERENCE) xtextrighthand;
+            righthand = new InReference(in.getRefname());
+        }
+        else if (xtextrighthand instanceof de.hsos.richwps.dSL.OUT_REFERENCE){
+            de.hsos.richwps.dSL.OUT_REFERENCE out = (de.hsos.richwps.dSL.OUT_REFERENCE) xtextrighthand;
+            righthand = new OutReference(out.getRefname());
+        }
+        else if (xtextrighthand instanceof de.hsos.richwps.dSL.VAR_REFERENCE){
+             de.hsos.richwps.dSL.VAR_REFERENCE var = (de.hsos.richwps.dSL.VAR_REFERENCE) xtextrighthand;
+            righthand = new VarReference(var.getRefname());
+        }
+   
         if (righthand instanceof Reference) {
             oas = new Assignment(lefthand, (Reference) righthand);
         } else {
@@ -243,13 +268,15 @@ public class Reader {
 
         for (ExecInput input : inputs) {
             String wpsid = input.getWpsid();
-            String reference_str = input.getReference();
+            EObject xtextreference = input.getReference();
             Reference ref = null;
-            if (reference_str.contains("in.")) {
-                String identifier = reference_str.substring(2);
+            if (xtextreference instanceof IN_REFERENCE) {
+                de.hsos.richwps.dSL.IN_REFERENCE in = (de.hsos.richwps.dSL.IN_REFERENCE) xtextreference;
+                String identifier = in.getRefname();
                 ref = new InReference(identifier);
-            } else if (reference_str.contains("var.")) {
-                String identifier = reference_str.substring(2);
+            } else if (xtextreference instanceof VAR_REFERENCE) {
+                de.hsos.richwps.dSL.VAR_REFERENCE var = (de.hsos.richwps.dSL.VAR_REFERENCE) xtextreference;
+                String identifier = var.getRefname();
                 ref = new VarReference(identifier);
             }
             oas.addInput(ref, wpsid);
@@ -257,13 +284,15 @@ public class Reader {
 
         for (ExecOutput output : outputs) {
             String wpsid = output.getWpsid();
-            String reference_str = output.getReference();
+            EObject xtextreference = output.getReference();
             Reference ref = null;
-            if (reference_str.contains("out.")) {
-                String identifier = reference_str.substring(2);
+            if (xtextreference instanceof OUT_REFERENCE) {
+                de.hsos.richwps.dSL.OUT_REFERENCE out = (de.hsos.richwps.dSL.OUT_REFERENCE) xtextreference;
+                String identifier = out.getRefname();
                 ref = new OutReference(identifier);
-            } else if (reference_str.contains("var.")) {
-                String identifier = reference_str.substring(2);
+            }else if (xtextreference instanceof VAR_REFERENCE) {
+                de.hsos.richwps.dSL.VAR_REFERENCE var = (de.hsos.richwps.dSL.VAR_REFERENCE) xtextreference;
+                String identifier = var.getRefname();
                 ref = new VarReference(identifier);
             }
             oas.addOutput(wpsid, ref);
