@@ -4068,31 +4068,31 @@ public class InternalDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExecOutput__Group_1__0__Impl"
-    // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1495:1: rule__ExecOutput__Group_1__0__Impl : ( ( rule__ExecOutput__WpsideAssignment_1_0 ) ) ;
+    // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1495:1: rule__ExecOutput__Group_1__0__Impl : ( ( rule__ExecOutput__WpsidAssignment_1_0 ) ) ;
     public final void rule__ExecOutput__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1499:1: ( ( ( rule__ExecOutput__WpsideAssignment_1_0 ) ) )
-            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1500:1: ( ( rule__ExecOutput__WpsideAssignment_1_0 ) )
+            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1499:1: ( ( ( rule__ExecOutput__WpsidAssignment_1_0 ) ) )
+            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1500:1: ( ( rule__ExecOutput__WpsidAssignment_1_0 ) )
             {
-            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1500:1: ( ( rule__ExecOutput__WpsideAssignment_1_0 ) )
-            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1501:1: ( rule__ExecOutput__WpsideAssignment_1_0 )
+            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1500:1: ( ( rule__ExecOutput__WpsidAssignment_1_0 ) )
+            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1501:1: ( rule__ExecOutput__WpsidAssignment_1_0 )
             {
-             before(grammarAccess.getExecOutputAccess().getWpsideAssignment_1_0()); 
-            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1502:1: ( rule__ExecOutput__WpsideAssignment_1_0 )
-            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1502:2: rule__ExecOutput__WpsideAssignment_1_0
+             before(grammarAccess.getExecOutputAccess().getWpsidAssignment_1_0()); 
+            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1502:1: ( rule__ExecOutput__WpsidAssignment_1_0 )
+            // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:1502:2: rule__ExecOutput__WpsidAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__ExecOutput__WpsideAssignment_1_0_in_rule__ExecOutput__Group_1__0__Impl3018);
-            rule__ExecOutput__WpsideAssignment_1_0();
+            pushFollow(FOLLOW_rule__ExecOutput__WpsidAssignment_1_0_in_rule__ExecOutput__Group_1__0__Impl3018);
+            rule__ExecOutput__WpsidAssignment_1_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getExecOutputAccess().getWpsideAssignment_1_0()); 
+             after(grammarAccess.getExecOutputAccess().getWpsidAssignment_1_0()); 
 
             }
 
@@ -7193,9 +7193,9 @@ public class InternalDSLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ExecOutput__ReferenceAssignment_0_2"
 
 
-    // $ANTLR start "rule__ExecOutput__WpsideAssignment_1_0"
-    // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:2718:1: rule__ExecOutput__WpsideAssignment_1_0 : ( RULE_ID ) ;
-    public final void rule__ExecOutput__WpsideAssignment_1_0() throws RecognitionException {
+    // $ANTLR start "rule__ExecOutput__WpsidAssignment_1_0"
+    // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:2718:1: rule__ExecOutput__WpsidAssignment_1_0 : ( RULE_ID ) ;
+    public final void rule__ExecOutput__WpsidAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7206,9 +7206,9 @@ public class InternalDSLParser extends AbstractInternalContentAssistParser {
             // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:2723:1: ( RULE_ID )
             // ../de.hsos.richwps.dsl.ui/src-gen/de/hsos/richwps/ui/contentassist/antlr/internal/InternalDSL.g:2724:1: RULE_ID
             {
-             before(grammarAccess.getExecOutputAccess().getWpsideIDTerminalRuleCall_1_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ExecOutput__WpsideAssignment_1_05444); 
-             after(grammarAccess.getExecOutputAccess().getWpsideIDTerminalRuleCall_1_0_0()); 
+             before(grammarAccess.getExecOutputAccess().getWpsidIDTerminalRuleCall_1_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ExecOutput__WpsidAssignment_1_05444); 
+             after(grammarAccess.getExecOutputAccess().getWpsidIDTerminalRuleCall_1_0_0()); 
 
             }
 
@@ -7227,7 +7227,7 @@ public class InternalDSLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ExecOutput__WpsideAssignment_1_0"
+    // $ANTLR end "rule__ExecOutput__WpsidAssignment_1_0"
 
 
     // $ANTLR start "rule__ExecOutput__ReferenceAssignment_1_2"
@@ -7903,7 +7903,7 @@ public class InternalDSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ExecOutput__ReferenceAssignment_0_2_in_rule__ExecOutput__Group_0__2__Impl2952 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ExecOutput__Group_1__0__Impl_in_rule__ExecOutput__Group_1__02988 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_rule__ExecOutput__Group_1__1_in_rule__ExecOutput__Group_1__02991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ExecOutput__WpsideAssignment_1_0_in_rule__ExecOutput__Group_1__0__Impl3018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ExecOutput__WpsidAssignment_1_0_in_rule__ExecOutput__Group_1__0__Impl3018 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ExecOutput__Group_1__1__Impl_in_rule__ExecOutput__Group_1__13048 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__ExecOutput__Group_1__2_in_rule__ExecOutput__Group_1__13051 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_21_in_rule__ExecOutput__Group_1__1__Impl3079 = new BitSet(new long[]{0x0000000000000002L});
@@ -7999,7 +7999,7 @@ public class InternalDSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__ExecInput__WpsidAssignment_1_25351 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__ExecOutput__WpsidAssignment_0_05382 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOUT_REFERENCE_in_rule__ExecOutput__ReferenceAssignment_0_25413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ExecOutput__WpsideAssignment_1_05444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ExecOutput__WpsidAssignment_1_05444 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVAR_REFERENCE_in_rule__ExecOutput__ReferenceAssignment_1_25475 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOUT_REFERENCE_in_rule__Assignment__LefthandAssignment_0_05506 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIN_REFERENCE_in_rule__Assignment__RighthandAssignment_0_25537 = new BitSet(new long[]{0x0000000000000002L});

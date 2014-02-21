@@ -78,7 +78,7 @@ public class DSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExecInputAccess().getWpsidAssignment_1_2(), "rule__ExecInput__WpsidAssignment_1_2");
 					put(grammarAccess.getExecOutputAccess().getWpsidAssignment_0_0(), "rule__ExecOutput__WpsidAssignment_0_0");
 					put(grammarAccess.getExecOutputAccess().getReferenceAssignment_0_2(), "rule__ExecOutput__ReferenceAssignment_0_2");
-					put(grammarAccess.getExecOutputAccess().getWpsideAssignment_1_0(), "rule__ExecOutput__WpsideAssignment_1_0");
+					put(grammarAccess.getExecOutputAccess().getWpsidAssignment_1_0(), "rule__ExecOutput__WpsidAssignment_1_0");
 					put(grammarAccess.getExecOutputAccess().getReferenceAssignment_1_2(), "rule__ExecOutput__ReferenceAssignment_1_2");
 					put(grammarAccess.getAssignmentAccess().getLefthandAssignment_0_0(), "rule__Assignment__LefthandAssignment_0_0");
 					put(grammarAccess.getAssignmentAccess().getRighthandAssignment_0_2(), "rule__Assignment__RighthandAssignment_0_2");

@@ -618,9 +618,9 @@ ruleExecOutput returns [EObject current=null]
 ))
     |((
 (
-		lv_wpside_3_0=RULE_ID
+		lv_wpsid_3_0=RULE_ID
 		{
-			newLeafNode(lv_wpside_3_0, grammarAccess.getExecOutputAccess().getWpsideIDTerminalRuleCall_1_0_0()); 
+			newLeafNode(lv_wpsid_3_0, grammarAccess.getExecOutputAccess().getWpsidIDTerminalRuleCall_1_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -628,8 +628,8 @@ ruleExecOutput returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"wpside",
-        		lv_wpside_3_0, 
+       			"wpsid",
+        		lv_wpsid_3_0, 
         		"ID");
 	    }
 

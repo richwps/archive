@@ -1498,9 +1498,9 @@ rule__ExecOutput__Group_1__0__Impl
     }
 :
 (
-{ before(grammarAccess.getExecOutputAccess().getWpsideAssignment_1_0()); }
-(rule__ExecOutput__WpsideAssignment_1_0)
-{ after(grammarAccess.getExecOutputAccess().getWpsideAssignment_1_0()); }
+{ before(grammarAccess.getExecOutputAccess().getWpsidAssignment_1_0()); }
+(rule__ExecOutput__WpsidAssignment_1_0)
+{ after(grammarAccess.getExecOutputAccess().getWpsidAssignment_1_0()); }
 )
 
 ;
@@ -2715,14 +2715,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ExecOutput__WpsideAssignment_1_0
+rule__ExecOutput__WpsidAssignment_1_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getExecOutputAccess().getWpsideIDTerminalRuleCall_1_0_0()); }
-	RULE_ID{ after(grammarAccess.getExecOutputAccess().getWpsideIDTerminalRuleCall_1_0_0()); }
+{ before(grammarAccess.getExecOutputAccess().getWpsidIDTerminalRuleCall_1_0_0()); }
+	RULE_ID{ after(grammarAccess.getExecOutputAccess().getWpsidIDTerminalRuleCall_1_0_0()); }
 )
 
 ;

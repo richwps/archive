@@ -35,7 +35,6 @@
     <genClasses ecoreClass="DSL.ecore#//ExecOutput">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//ExecOutput/wpsid"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSL.ecore#//ExecOutput/reference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DSL.ecore#//ExecOutput/wpside"/>
     </genClasses>
     <genClasses ecoreClass="DSL.ecore#//Assignment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DSL.ecore#//Assignment/lefthand"/>

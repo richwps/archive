@@ -32,7 +32,7 @@ ExecInput:
 	(reference=IN_REFERENCE 'as' wpsid=ID) | (reference=VAR_REFERENCE 'as' wpsid=ID);
 
 ExecOutput:
-	(wpsid=ID 'as' reference=OUT_REFERENCE) | (wpside=ID 'as' reference=VAR_REFERENCE);
+	(wpsid=ID 'as' reference=OUT_REFERENCE) | (wpsid=ID 'as' reference=VAR_REFERENCE);
 
 Assignment:
 	( lefthand=OUT_REFERENCE '=' righthand=IN_REFERENCE) | 
