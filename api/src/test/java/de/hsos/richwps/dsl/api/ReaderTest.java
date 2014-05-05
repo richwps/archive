@@ -173,8 +173,8 @@ public class ReaderTest extends TestCase {
         assertEquals(exp, res);
     }
 
-    public void testAssingments() {
-        System.out.println("testAssingments");
+    public void testassignments() {
+        System.out.println("testassignments");
         String path = testfileprefix + "Assignments" + ext;
         Reader instance = new Reader();
         try {
@@ -259,6 +259,25 @@ public class ReaderTest extends TestCase {
 
             assertEquals(exp_b2, act_b2);
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
+    }
+
+    public void testSampleRolaProcess() {
+        System.out.println("testSampleROLAProcess");
+        String path = testfileprefix + "SampleROLAProcess" + ext;
+        Reader instance = new Reader();
+        try {
+            instance.load(path);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
+
+        try {
+            instance.inspect();
         } catch (Exception e) {
             e.printStackTrace();
             fail();

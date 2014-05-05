@@ -16,8 +16,8 @@ public class Worksequence extends ArrayList<IOperation> {
     }
 
     /**
-     * Returns the amount of given bindings. Debugging/testing and statistical
-     * purpose only.
+     * Returns the amount of given bindings. Debugging/testing and
+     * statistical purpose only.
      *
      * @return amount bindings.
      */
@@ -38,18 +38,18 @@ public class Worksequence extends ArrayList<IOperation> {
      * @return amount assignments.
      */
     public int countAssignments() {
-        int assingments = 0;
+        int assignments = 0;
         for (Object o : this) {
             if (o instanceof Assignment) {
-                assingments++;
+                assignments++;
             }
         }
-        return assingments;
+        return assignments;
     }
 
     /**
-     * Returns the amount of given execute-statements. Debugging/testing and
-     * statistical purpose only.
+     * Returns the amount of given execute-statements. Debugging/testing
+     * and statistical purpose only.
      *
      * @return amount execute-statements.
      */

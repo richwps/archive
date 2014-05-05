@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * @author dalcacer
- * @version draft
+ * @version v1
  */
 public class Writer {
 
@@ -35,7 +35,8 @@ public class Writer {
     }
 
     /**
-     * Creates a script file from a path string.
+     * Creates a script 
+     * file from a path string.
      *
      * @param path path to wd-file.
      * @throws Exception When worksequence is not loadable.

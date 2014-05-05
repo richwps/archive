@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * </ol>
  *
  * @author dalcacer
- * @version draft
+ * @version v1
  */
 public class Reader {
 
@@ -44,17 +44,26 @@ public class Reader {
      */
     private de.hsos.richwps.dSL.Worksequence xtext_ws;
     /**
-     * A more convinient representation of the worksequence.
+     * A more convinient representation of the worksequence, which can be
+     * inspected.
      */
     private Worksequence worksequence;
     /**
      * Goolge Guice injector, which is needed by XText.
      */
     private final Injector injector;
-
+    /**
+     * Internal statistics.
+     */
     private int stat_bindings = 0;
+    /**
+     * Internal statistics.
+     */
     private int stat_executes = 0;
-    private int stat_assingments = 0;
+    /**
+     * Internal statistics.
+     */
+    private int stat_assignments = 0;
 
     /**
      * Constructs a new reader-object.
@@ -65,7 +74,7 @@ public class Reader {
         this.injector = new DSLStandaloneSetup().createInjectorAndDoEMFRegistration();
         this.stat_bindings = 0;
         this.stat_executes = 0;
-        this.stat_assingments = 0;
+        this.stat_assignments = 0;
     }
 
     /**
@@ -125,7 +134,7 @@ public class Reader {
         //1. local bindings
         //2. remote bindings
         //3. execute statement
-        //4. assingment
+        //4. assignment
         while (iterator.hasNext()) {
             final EObject eo = iterator.next();
             IOperation elem = null;
@@ -145,7 +154,7 @@ public class Reader {
                 System.out.println("execute statement found: " + es.toString());
                 elem = this.createExecute(es);
             } else if (eo instanceof de.hsos.richwps.dSL.Assignment) {
-                this.stat_assingments += 1;
+                this.stat_assignments += 1;
                 final de.hsos.richwps.dSL.Assignment as = (de.hsos.richwps.dSL.Assignment) eo;
                 System.out.println("assigment statement found: " + as.toString());
                 elem = this.createAssignment(as);
@@ -187,7 +196,7 @@ public class Reader {
     }
 
     /**
-     * Converts an XText assingment to an assingment object. An assignments
+     * Converts an XText assignment to an assignment object. An assignments
      * consists of a lefthand and a righhand. Lefthand and righthandvalues can
      * be reference (in/out/var) or values.      <code>Assignment:
      * ( lefthand=OUT_REFERENCE '=' righthand=IN_REFERENCE) |
@@ -204,44 +213,40 @@ public class Reader {
      * (reftype=VAR_REFERENCE_HANDLE refname=ID);
      * </code>
      *
-     * @param as Xtext assingment
-     * @return assingment.
+     * @param as Xtext assignment
+     * @return assignment.
      */
     private Assignment createAssignment(de.hsos.richwps.dSL.Assignment as) throws Exception {
         Assignment oas = null;
 
         EObject xtextlefthand = as.getLefthand();
         de.hsos.richwps.dsl.api.elements.Reference lefthand = null;
-         
-        if(xtextlefthand instanceof de.hsos.richwps.dSL.IN_REFERENCE){
+
+        if (xtextlefthand instanceof de.hsos.richwps.dSL.IN_REFERENCE) {
             de.hsos.richwps.dSL.IN_REFERENCE in = (de.hsos.richwps.dSL.IN_REFERENCE) xtextlefthand;
             lefthand = new InReference(in.getRefname());
-        }
-        else if (xtextlefthand instanceof de.hsos.richwps.dSL.OUT_REFERENCE){
+        } else if (xtextlefthand instanceof de.hsos.richwps.dSL.OUT_REFERENCE) {
             de.hsos.richwps.dSL.OUT_REFERENCE out = (de.hsos.richwps.dSL.OUT_REFERENCE) xtextlefthand;
             lefthand = new OutReference(out.getRefname());
-        }
-        else if (xtextlefthand instanceof de.hsos.richwps.dSL.VAR_REFERENCE){
-             de.hsos.richwps.dSL.VAR_REFERENCE var = (de.hsos.richwps.dSL.VAR_REFERENCE) xtextlefthand;
+        } else if (xtextlefthand instanceof de.hsos.richwps.dSL.VAR_REFERENCE) {
+            de.hsos.richwps.dSL.VAR_REFERENCE var = (de.hsos.richwps.dSL.VAR_REFERENCE) xtextlefthand;
             lefthand = new VarReference(var.getRefname());
         }
 
         Reference righthand = null;
         EObject xtextrighthand = as.getRighthand();
-        
-         if(xtextrighthand instanceof de.hsos.richwps.dSL.IN_REFERENCE){
+
+        if (xtextrighthand instanceof de.hsos.richwps.dSL.IN_REFERENCE) {
             de.hsos.richwps.dSL.IN_REFERENCE in = (de.hsos.richwps.dSL.IN_REFERENCE) xtextrighthand;
             righthand = new InReference(in.getRefname());
-        }
-        else if (xtextrighthand instanceof de.hsos.richwps.dSL.OUT_REFERENCE){
+        } else if (xtextrighthand instanceof de.hsos.richwps.dSL.OUT_REFERENCE) {
             de.hsos.richwps.dSL.OUT_REFERENCE out = (de.hsos.richwps.dSL.OUT_REFERENCE) xtextrighthand;
             righthand = new OutReference(out.getRefname());
-        }
-        else if (xtextrighthand instanceof de.hsos.richwps.dSL.VAR_REFERENCE){
-             de.hsos.richwps.dSL.VAR_REFERENCE var = (de.hsos.richwps.dSL.VAR_REFERENCE) xtextrighthand;
+        } else if (xtextrighthand instanceof de.hsos.richwps.dSL.VAR_REFERENCE) {
+            de.hsos.richwps.dSL.VAR_REFERENCE var = (de.hsos.richwps.dSL.VAR_REFERENCE) xtextrighthand;
             righthand = new VarReference(var.getRefname());
         }
-   
+
         if (righthand instanceof Reference) {
             oas = new Assignment(lefthand, (Reference) righthand);
         } else {
@@ -290,7 +295,7 @@ public class Reader {
                 de.hsos.richwps.dSL.OUT_REFERENCE out = (de.hsos.richwps.dSL.OUT_REFERENCE) xtextreference;
                 String identifier = out.getRefname();
                 ref = new OutReference(identifier);
-            }else if (xtextreference instanceof VAR_REFERENCE) {
+            } else if (xtextreference instanceof VAR_REFERENCE) {
                 de.hsos.richwps.dSL.VAR_REFERENCE var = (de.hsos.richwps.dSL.VAR_REFERENCE) xtextreference;
                 String identifier = var.getRefname();
                 ref = new VarReference(identifier);

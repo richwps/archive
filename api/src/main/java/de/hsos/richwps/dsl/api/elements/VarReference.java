@@ -1,8 +1,8 @@
 package de.hsos.richwps.dsl.api.elements;
 
 /**
- * Represents a reference (in/out/var) which can be used by assingments, and
- * execute statements.
+ * Represents a reference (in/out/var) which can be used by assignments,
+ * and execute statements.
  *
  * @author dalcacer
  * @version draft

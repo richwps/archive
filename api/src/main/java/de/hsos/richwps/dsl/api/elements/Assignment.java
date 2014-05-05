@@ -3,7 +3,7 @@ package de.hsos.richwps.dsl.api.elements;
 import de.hsos.richwps.dsl.api.exceptions.UnsupportedSyntaxException;
 
 /**
- * Represents an assingment which is used to store the value of reference b to
+ * Represents an assignment which is used to store the value of reference b to
  * reference a.
  *
  * @author fbensmann
