@@ -30,4 +30,8 @@ public class VarReference extends Reference {
 
         return false;
     }
+    
+    public String toNotation(){
+        return "var."+this.getId();
+    }
 }

@@ -31,4 +31,7 @@ public class OutReference extends Reference {
         return false;
     }
 
+    public String toNotation(){
+        return "out."+this.getId();
+    }
 }

@@ -44,6 +44,16 @@ public class Reference {
         }
         return true;
     }
-    
-    
+
+    /**
+     * Never used, because of inheritance.
+     *
+     * @see InReference
+     * @see OutReference
+     * @see VarReference
+     * .
+     */
+    public String toNotation() {
+        return "";
+    }
 }

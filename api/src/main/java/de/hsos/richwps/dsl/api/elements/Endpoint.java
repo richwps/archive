@@ -48,7 +48,7 @@ public class Endpoint {
     }
 
     public String getProtocol() {
-        return protocol;
+        return this.protocol;
     }
 
     public void setProtocol(String protocol) {
@@ -56,7 +56,7 @@ public class Endpoint {
     }
 
     public String getHost() {
-        return host;
+        return this.host;
     }
 
     public void setHost(String host) {
@@ -64,15 +64,15 @@ public class Endpoint {
     }
 
     public int getPort() {
-        return port;
+        return this.port;
     }
 
     public void setPort(int port) {
         this.port = port;
     }
 
-    public String getPathToEndPoint() {
-        return path;
+    public String getPath() {
+        return this.path;
     }
 
     public void setPath(String pathToEndPoint) {

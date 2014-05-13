@@ -1,6 +1,7 @@
 package de.hsos.richwps.dsl.api.elements;
 
 import de.hsos.richwps.dsl.api.exceptions.UnsupportedSyntaxException;
+import java.text.MessageFormat;
 
 /**
  * Represents an assignment which is used to store the value of reference b to
@@ -27,7 +28,7 @@ public class Assignment implements IOperation {
         if ((a instanceof InReference) || (a.getClass() == InReference.class)) {
             throw new UnsupportedSyntaxException("Binding values to worksequence inputs is not allowed.");
         }
-        
+
         this.lefthand = a;
         this.righthand = b;
         this.stringvalue = null;
@@ -93,12 +94,22 @@ public class Assignment implements IOperation {
         }
         return true;
     }
-    
+
     /**
-     * 
+     *
      */
     @Override
-    public String toNotation(){
-        return "assignment";
+    public String toNotation() {
+        String assignment = "";
+        if (this.righthand instanceof Reference) {
+            assignment = MessageFormat.format("{0} = {1}", this.lefthand.toNotation(), this.righthand.toNotation());
+        } else if (this.righthand == null) {
+            if (this.intvalue != null) {
+                assignment = MessageFormat.format("{0} = {1}", this.lefthand.toNotation(), intvalue);
+            } else if (this.stringvalue != null) {
+                assignment = MessageFormat.format("{0} = {1}", this.lefthand.toNotation(), stringvalue);
+            }
+        }
+        return assignment;
     }
 }

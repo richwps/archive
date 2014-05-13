@@ -6,7 +6,10 @@ package de.hsos.richwps.dsl.api.elements;
  */
 public interface IOperation {
     
-    
+    /**
+     * Transform an respective object into notation.
+     * @return 
+     */
     public String toNotation();
     
 }

@@ -1,6 +1,7 @@
 package de.hsos.richwps.dsl.api.elements;
 
 import de.hsos.richwps.dsl.api.exceptions.UnsupportedSyntaxException;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,15 +126,21 @@ public class Execute implements IOperation {
         return true;
     }
 
-    
-    
     /**
      *
      */
     @Override
     public String toNotation() {
-        return "execute";
+        String exec = "";
+        exec = MessageFormat.format("execute {0} with ", this.handle);
+        for (int i = 0; i < inputnames.size(); i++) {
+            exec += (inputreferences.get(i)).toNotation() + " as " + inputnames.get(i) + " ";
+        }
+        exec += " store ";
+        for (int i = 0; i < outputnames.size(); i++) {
+            exec += outputnames.get(i) + " as " + (outputreferences.get(i)).toNotation() +" ";
+        }
+        return exec;
     }
-    
-    
+
 }

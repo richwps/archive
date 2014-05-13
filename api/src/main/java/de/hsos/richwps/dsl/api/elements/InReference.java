@@ -29,4 +29,8 @@ public class InReference extends Reference {
         }
         return false;
     }
+    
+    public String toNotation(){
+        return "in."+this.getId();
+    }
 }
