@@ -4,7 +4,7 @@
     editorDirectory="/de.hsos.richwps.dsl.editor/src" modelPluginID="de.hsos.richwps.dsl"
     forceOverwrite="true" modelName="DSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="de.hsos.richwps.dsl.edit"
-    editorPluginID="de.hsos.richwps.dsl.editor" runtimeVersion="2.9">
+    editorPluginID="de.hsos.richwps.dsl.editor" runtimeVersion="2.10">
   <genPackages prefix="DSL" basePackage="de.hsos.richwps" disposableProviderFactory="true"
       fileExtensions="dsl" ecorePackage="DSL.ecore#/">
     <genClasses ecoreClass="DSL.ecore#//Worksequence">

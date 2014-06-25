@@ -4,11 +4,12 @@
 * `cd api && mvn clean install`
 * reference the library in your maven-project:
 
-`   <dependency>
-    <groupId>de.hsos.richwps</groupId>
-    <artifactId>dsl.api</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    </dependency>`
+`       <dependency>
+                <groupId>de.hsos.richwps</groupId>
+                <artifactId>dsl.api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <classifier>jar-with-dependencies</classifier>
+            </dependency>
 
 * reading scripts
 	* Instantiate `de.hsos.richwps.dsl.api.Reader`
