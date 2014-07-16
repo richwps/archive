@@ -1,0 +1,6 @@
+one = new Geometry(parameters[0])
+
+def proc = new Process("geo:area")
+results = proc.execute(["geom": one])
+
+outputs = ["result": results.result]

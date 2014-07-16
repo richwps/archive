@@ -1,0 +1,12 @@
+one = parameters[0]
+two = parameters[1]
+
+def proc = new Process("vec:IntersectionFeatureCollection")
+results = proc.execute(["first feature collection": one, "second feature collection": two])
+
+layer = new Layer()
+layer.add(results.result)
+
+features = GeoscriptHelper.prepare(layer)
+
+outputs = ["one": features]
